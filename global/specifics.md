@@ -1,13 +1,13 @@
 # Specifics (template)
 
 Machine- and project-bound rules. These do **not** belong in the universal
-`CLAUDE.md` — only load/apply the section relevant to the machine you're on.
+`CLAUDE.md`, only load/apply the section relevant to the machine you're on.
 This file is a **template**: replace the example sections with your own
 machines and projects. Keep each section short and factual.
 
 ---
 
-## Example — Work machine
+## Example: Work machine
 
 **Stack & domain**
 - The languages, frameworks, and CMS you actually use here. Name versions when
@@ -15,7 +15,7 @@ machines and projects. Keep each section short and factual.
   the work (e.g. accessibility, data pipelines, embedded).
 
 **Workflow**
-- Any machine-specific habits the agent should follow — e.g. "after a UI change,
+- Any machine-specific habits the agent should follow, e.g. "after a UI change,
   start the dev server so I can test in the browser; kill stray dev servers when
   done." Encode the *behavior*, not one-off instructions.
 - Whether to set up CI / test infra proactively, or stay feature-first unless
@@ -26,7 +26,7 @@ a project without asking.
 
 ---
 
-## Example — Second machine (different OS / role)
+## Example: Second machine (different OS / role)
 
 **Machine:** OS, window manager, shell, editor, terminal, and package managers.
 If it's a distro with native conventions (e.g. Arch + yay/pacman), say "use the
@@ -46,7 +46,7 @@ names out of a shared/public copy of this file.*
 
 ## Notes on posture & secrets
 
-- You can encode a *posture* — e.g. "fine with running privileged/sudo commands
+- You can encode a *posture*, e.g. "fine with running privileged/sudo commands
   directly; I supply the password when prompted." **Encode the posture, never
   the password**, and never any token, key, or credential value.
 - Personal identifiers (full name, email, logins, private hostnames, client

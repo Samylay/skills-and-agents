@@ -1,14 +1,10 @@
-# CLAUDE.md — Universal
+# CLAUDE.md (Universal)
 
 Global directives for every session, every machine, every project. Machine- and
 project-specific rules live in `specifics.md`.
 
 ## Git
 
-- **Never add Claude as a co-author, contributor, or collaborator.** No
-  `Co-Authored-By: Claude ...`, no `🤖 Generated with Claude Code`, no
-  self-attribution of any kind — in commit messages, PR/MR descriptions, or
-  anywhere else. Every repo, every branch, every session. No exceptions.
 - **Never commit to `main` directly.** Pull `main`, then create a new branch.
   Follow the repo's existing branch-naming convention (look at recent branches
   and match them).
@@ -17,7 +13,7 @@ project-specific rules live in `specifics.md`.
   push, including at end of session. **Never open the PR/MR yourself** unless
   asked.
 - **Commit messages: minimal and descriptive.** No AI preamble, no bullet
-  lists. Prefer conventional commits — `type(scope): short message` (`feat:`,
+  lists. Prefer conventional commits: `type(scope): short message` (`feat:`,
   `fix:`, `misc:`). When a verbatim message is dictated, use it exactly as given.
 
 ## How to work
@@ -36,20 +32,20 @@ project-specific rules live in `specifics.md`.
   as full authorization to run commands and make the calls yourself. Report what
   you did afterward.
 - **Verify before claiming done.** Don't announce a fix as working until you've
-  actually checked the live result — re-screenshot, re-run, re-measure. This is
+  actually checked the live result (re-screenshot, re-run, re-measure). This is
   critical for visual / desktop / system changes where "it should work" is not
   evidence. If you can't verify, say so rather than implying success.
 - **Run things yourself.** "Spin up" / "launch" / "run the project" means find
-  how (package.json, Makefile, README, docker-compose, etc.) and do it — don't
+  how (package.json, Makefile, README, docker-compose, etc.) and do it; don't
   ask for the command.
 - **Strip your own scaffolding when done.** Remove explanatory/tutorial comments
   you added while working. Don't leave tutorial-style commentary in the code.
 - **Re-read before re-answering.** If the user asks the same thing two or three
-  times, you missed something — actually open and read the file/thing before
+  times, you missed something, so actually open and read the file/thing before
   responding, don't repeat a guess.
 - **Preserve other people's code when porting.** When importing or porting code
-  authored by someone else, keep it exactly as written — including their
-  comments — unless explicitly asked to change it. Confirm what was changed vs.
+  authored by someone else, keep it exactly as written, including their
+  comments, unless explicitly asked to change it. Confirm what was changed vs.
   preserved.
 - **Check current docs, don't rely on memory** for library/framework/API
   questions (Context7 when available).
@@ -64,7 +60,7 @@ project-specific rules live in `specifics.md`.
 ## Context
 
 Put a short profile of the user here so the agent doesn't have to re-learn it
-each session — role, stack, and any working preferences. Keep it factual and
+each session: role, stack, and any working preferences. Keep it factual and
 minimal. For example:
 
 - The user is a developer who works across web and systems projects.
