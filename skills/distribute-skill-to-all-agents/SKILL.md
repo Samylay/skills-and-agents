@@ -11,14 +11,14 @@ The user has multiple agent skill locations on this Linux box. A skill must exis
 
 | Agent | Skills Folder | How it's linked |
 |---|---|---|
-| Canonical store | `~/.agents/skills/` | **Author skills here first** — single source of truth |
+| Canonical store | `~/.agents/skills/` | **Author skills here first**, single source of truth |
 | Claude Code | `~/.claude/skills/` | **Per-skill symlinks → `../../.agents/skills/<name>`** |
 | Codex | `~/.codex/skills/` | Independent real copy |
 | Copilot | `~/.copilot/skills/` | Independent real copy |
 | Cursor | `~/.cursor/skills/` | Independent real copy |
 | Hermes | `~/.hermes/skills/` | Independent real copy (snapshots at session start) |
 
-There is **no Pi and no Gemini skills folder** on this machine — don't create them.
+There is **no Pi and no Gemini skills folder** on this machine, so don't create them.
 
 ## Workflow
 
@@ -28,7 +28,7 @@ There is **no Pi and no Gemini skills folder** on this machine — don't create 
    SKILL=<skill-name>
    ln -sfn "../../.agents/skills/$SKILL" "$HOME/.claude/skills/$SKILL"
    ```
-3. **Copy it into the real-copy agents that exist on this machine** (skip absent ones — a given machine may only have a subset installed; do NOT create agent dirs):
+3. **Copy it into the real-copy agents that exist on this machine** (skip absent ones, since a given machine may only have a subset installed; do NOT create agent dirs):
    ```bash
    for d in codex copilot cursor hermes; do
      [ -d "$HOME/.$d/skills" ] && rsync -a --delete "$HOME/.agents/skills/$SKILL/" "$HOME/.$d/skills/$SKILL/"
@@ -44,14 +44,14 @@ There is **no Pi and no Gemini skills folder** on this machine — don't create 
 
 ## Updating an Existing Distributed Skill
 
-Same flow — re-run step 3 (the `.claude` symlink auto-tracks canonical). Use `rsync -a --delete` (not `cp -r`) so nested files removed from canonical are removed downstream too.
+Same flow: re-run step 3 (the `.claude` symlink auto-tracks canonical). Use `rsync -a --delete` (not `cp -r`) so nested files removed from canonical are removed downstream too.
 
 ## Pitfalls
 
-- **`~/.claude/skills/<name>` is a symlink, not a folder.** Don't `cp -r` into it — edit the canonical `.agents` copy and the symlink reflects it.
-- **Codex / Copilot / Cursor / Hermes are independent copies.** They do NOT auto-update — re-run the rsync loop after every canonical edit.
+- **`~/.claude/skills/<name>` is a symlink, not a folder.** Don't `cp -r` into it. Edit the canonical `.agents` copy and the symlink reflects it.
+- **Codex / Copilot / Cursor / Hermes are independent copies.** They do NOT auto-update, so re-run the rsync loop after every canonical edit.
 - **Hermes snapshots skills at session start.** A newly-distributed skill won't appear inside a running Hermes session until restart (fine for future sessions and the other agents immediately).
-- **Project-local skills win** — `./.claude/skills/`, `./.codex/skills/`, etc. inside a repo override the global one on collision. This skill only handles GLOBAL distribution.
+- **Project-local skills win.** `./.claude/skills/`, `./.codex/skills/`, etc. inside a repo override the global one on collision. This skill only handles GLOBAL distribution.
 - **Filename casing matters.** `SKILL.md` must be uppercase.
 
 ## When NOT to Use This Skill

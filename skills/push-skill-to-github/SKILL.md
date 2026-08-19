@@ -5,7 +5,7 @@ description: Commit and push agent-skill changes to the user's private skills Gi
 
 # Push Skills to GitHub
 
-For committing any skill change to the user's private skills repo, git root **`~/.agents`** (this is also the canonical skill folder; `~/.claude/skills/<name>` symlinks to `~/.agents/skills/<name>`, and Codex/Copilot/Cursor/Hermes hold independent copies — re-sync them via `distribute-skill-to-all-agents` before pushing if the skill is global).
+For committing any skill change to the user's private skills repo, git root **`~/.agents`** (this is also the canonical skill folder; `~/.claude/skills/<name>` symlinks to `~/.agents/skills/<name>`, and Codex/Copilot/Cursor/Hermes hold independent copies, so re-sync them via `distribute-skill-to-all-agents` before pushing if the skill is global).
 
 Use this after creating or editing a skill. If the skill is distributed to all agents, do that first (`distribute-skill-to-all-agents`), then run this to push the canonical copy.
 
