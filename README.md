@@ -15,11 +15,12 @@ skills/         ~60 self-contained skills (one folder each, SKILL.md inside)
 ## Skills worth starting with
 
 - **`effective-agent-skills` / `write-a-skill`** — how to author skills well (progressive disclosure, triggers, anti-patterns).
-- **`code-review`, `diagnosing-bugs`, `tdd`, `verify`** — core dev loops.
 - **`interaction-craft`** — Emil Kowalski's web-animation doctrine as a house style for UI work.
 - **`improve` / `improve-animations`** — the plan-expensive / execute-cheap pattern: a top model audits and queues verifiable tasks; a cheaper model executes them later.
-- **`git-guardrails-claude-code`, `setup-pre-commit`** — deterministic guardrails via hooks.
+- **`session-review`** — end-of-session retrospective that turns friction and wins into concrete improvements.
 - **`delegating-to-agents`, `distribute-skill-to-all-agents`** — multi-agent orchestration and keeping skills in sync across agents.
+
+Core dev-loop skills (code review, TDD, diagnosing bugs, merge conflicts, domain modeling, guardrail hooks, etc.) aren't vendored here anymore — install [mattpocock/skills](https://github.com/mattpocock/skills) directly, which now covers them.
 
 ## Using a skill
 
